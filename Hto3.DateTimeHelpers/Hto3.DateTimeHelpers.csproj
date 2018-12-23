@@ -11,6 +11,13 @@
     <RepositoryUrl>https://github.com/HTO3/Hto3.DateTimeHelpers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Date Time DateTime manipulation helpers</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>bin\Release\Hto3.DateTimeHelpers.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

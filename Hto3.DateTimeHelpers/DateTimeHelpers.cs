@@ -3,7 +3,10 @@ using System.Collections.Generic;
 
 namespace Hto3.DateTimeHelpers
 {
-    public static class Helpers
+    /// <summary>
+    /// Class containing helpers for date and time manipulation
+    /// </summary>
+    public static class DateTimeHelpers
     {
         private static readonly DateTime _epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         private static readonly Int64 _epochTicks = new DateTime(1970, 1, 1, 0, 0, 0).Ticks;
@@ -55,7 +58,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Convert UTC DateTime to unix timestamp
         /// </summary>
-        /// <param name="localTime">UTC DateTime object</param>
+        /// <param name="utcTimestamp">UTC DateTime object</param>
         /// <returns>unix timestamp</returns>
         public static Int64 UTCtoUnixTime(this DateTimeOffset utcTimestamp)
         {
@@ -281,7 +284,7 @@ namespace Hto3.DateTimeHelpers
         /// Change the milisecond of a DateTime
         /// </summary>
         /// <param name="me"></param>
-        /// <param name="second"></param>
+        /// <param name="millisecond"></param>
         /// <returns></returns>
         public static DateTime SetMillisecond(this DateTime me, Int32 millisecond)
         {
@@ -466,7 +469,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime NextOddHour()
         {
-            var next = Helpers.NextFullHour();
+            var next = DateTimeHelpers.NextFullHour();
 
             if (next.Hour % 2 != 0)
                 return next;
@@ -479,7 +482,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime NextEvenHour()
         {
-            var next = Helpers.NextFullHour();
+            var next = DateTimeHelpers.NextFullHour();
 
             if (next.Hour % 2 != 0)
                 return next.AddHours(1);
@@ -504,7 +507,7 @@ namespace Hto3.DateTimeHelpers
             var now = DateTime.Now;
 
             if (now.Minute >= 30)
-                return Helpers.NextFullHour();
+                return DateTimeHelpers.NextFullHour();
             else
                 return new DateTime(now.Year, now.Month, now.Day, now.Hour, 30, 0);
         }

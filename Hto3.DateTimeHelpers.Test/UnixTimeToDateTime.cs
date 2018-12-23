@@ -16,7 +16,7 @@ namespace Hto3.DateTimeHelpers.Test
             var utc = new DateTime(2018, 12, 11, 23, 50, 30, DateTimeKind.Utc);
             var unspecifiedDateTime = new DateTime(utc.ToLocalTime().Ticks);
 
-            Assert.AreEqual(Helpers.UnixTimeToDateTime(1544572230), unspecifiedDateTime);
+            Assert.AreEqual(DateTimeHelpers.UnixTimeToDateTime(1544572230), unspecifiedDateTime);
         }
     }
 }
