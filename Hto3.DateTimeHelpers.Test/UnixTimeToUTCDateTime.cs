@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 namespace Hto3.DateTimeHelpers.Test
 {
     [TestClass]
-    public class AppendMissing
+    public class UnixTimeToUTCDateTime
     {
         [TestMethod]
         public void NormalUse()
         {
-            Assert.AreEqual(Helpers.UnixTimeToUTC(1544572230), new DateTime(2018, 12, 11, 23, 50, 30, DateTimeKind.Utc));
+            Assert.AreEqual(Helpers.UnixTimeToUTCDateTime(1544572230), new DateTime(2018, 12, 11, 23, 50, 30, DateTimeKind.Utc));
         }
     }
 }

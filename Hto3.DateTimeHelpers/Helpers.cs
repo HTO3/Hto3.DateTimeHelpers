@@ -12,20 +12,20 @@ namespace Hto3.DateTimeHelpers
         /// </summary>
         /// <param name="unixTime">Unix Timestamp</param>
         /// <returns></returns>
-        public static DateTime UnixTimeToUTC(this Int64 unixTime)
+        public static DateTime UnixTimeToUTCDateTime(this Int64 unixTime)
         {
             var result = _epoch.AddSeconds(unixTime);
             return result;
         }
         /// <summary>
-        /// Convert unix timestamp to Local DateTime
+        /// Convert unix timestamp to DateTime
         /// </summary>
         /// <param name="unixTime">Unix Timestamp</param>
         /// <returns></returns>
-        public static DateTime UnixTimeToLocal(this Int64 unixTime)
+        public static DateTime UnixTimeToDateTime(this Int64 unixTime)
         {
-            var result = _epoch.AddSeconds(unixTime);
-            return result.ToLocalTime();
+            var result = _epoch.AddSeconds(unixTime).ToLocalTime();
+            return new DateTime(result.Ticks);
         }
         /// <summary>
         /// Convert Local DateTime to unix timestamp
@@ -34,6 +34,11 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static Int64 LocalToUnixTime(this DateTime localTime)
         {
+            if (localTime.Kind == DateTimeKind.Utc)
+                throw new InvalidOperationException("Cannot use a utc DateTime. Needs to be a local or unspecified (assumed as a local) DateTime.");
+            if (localTime.Kind == DateTimeKind.Unspecified)
+                localTime = new DateTime(localTime.Ticks, DateTimeKind.Local);
+
             var utcTime = localTime.ToUniversalTime();
             return UTCtoUnixTime(utcTime);
         }
@@ -44,7 +49,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static Int64 UTCtoUnixTime(DateTime utcTimestamp)
         {
-            return ((utcTimestamp.Ticks - _epochTicks) / TimeSpan.TicksPerSecond);
+            return (utcTimestamp.Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
         }
 
         /// <summary>
@@ -52,9 +57,9 @@ namespace Hto3.DateTimeHelpers
         /// </summary>
         /// <param name="localTime">UTC DateTime object</param>
         /// <returns>unix timestamp</returns>
-        public static long UTCtoUnixTime(this DateTimeOffset utcTimestamp)
+        public static Int64 UTCtoUnixTime(this DateTimeOffset utcTimestamp)
         {
-            return ((utcTimestamp.Ticks - _epochTicks) / TimeSpan.TicksPerSecond);
+            return (utcTimestamp.Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
         }
         /// <summary>
         /// Strip the time part of a complete DateTime
