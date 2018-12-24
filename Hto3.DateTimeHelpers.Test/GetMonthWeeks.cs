@@ -10,5 +10,25 @@ namespace Hto3.DateTimeHelpers.Test
     [TestClass]
     public class GetMonthWeeks
     {
+        [TestMethod]
+        public void NormalUse()
+        {
+            var weeks = DateTimeHelpers.GetMonthWeeks(2, 2018);
+
+            Assert.AreEqual(weeks.ElementAt(0).Item1, new DateTime(2018, 2, 1));
+            Assert.AreEqual(weeks.ElementAt(0).Item2, new DateTime(2018, 2, 3));
+
+            Assert.AreEqual(weeks.ElementAt(1).Item1, new DateTime(2018, 2, 4));
+            Assert.AreEqual(weeks.ElementAt(1).Item2, new DateTime(2018, 2, 10));
+
+            Assert.AreEqual(weeks.ElementAt(2).Item1, new DateTime(2018, 2, 11));
+            Assert.AreEqual(weeks.ElementAt(2).Item2, new DateTime(2018, 2, 17));
+
+            Assert.AreEqual(weeks.ElementAt(3).Item1, new DateTime(2018, 2, 18));
+            Assert.AreEqual(weeks.ElementAt(3).Item2, new DateTime(2018, 2, 24));
+
+            Assert.AreEqual(weeks.ElementAt(4).Item1, new DateTime(2018, 2, 25));
+            Assert.AreEqual(weeks.ElementAt(4).Item2, new DateTime(2018, 2, 28));
+        }
     }
 }

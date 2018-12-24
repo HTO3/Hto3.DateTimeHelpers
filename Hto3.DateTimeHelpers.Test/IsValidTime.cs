@@ -10,5 +10,11 @@ namespace Hto3.DateTimeHelpers.Test
     [TestClass]
     public class IsValidTime
     {
+        [TestMethod]
+        public void NormalUse()
+        {
+            Assert.IsTrue(DateTimeHelpers.IsValidTime(23, 59, 1));
+            Assert.IsFalse(DateTimeHelpers.IsValidTime(24, -1, 0));
+        }
     }
 }

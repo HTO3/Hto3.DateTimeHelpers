@@ -310,12 +310,13 @@ namespace Hto3.DateTimeHelpers
             var cursor = firstDay;
             while (cursor <= lastDay)
             {
-                output.Add(new Tuple<DateTime, DateTime>
-                (
-                    cursor
-                    ,
-                    cursor.AddDays(6 - (Int32)cursor.DayOfWeek)
-                ));
+                var start = cursor;
+                var end = cursor.AddDays(6 - (Int32)cursor.DayOfWeek);
+
+                if (end > lastDay)
+                    end = lastDay;
+
+                output.Add(new Tuple<DateTime, DateTime>(start, end));
 
                 cursor = cursor.AddDays(7 - (Int32)cursor.DayOfWeek);
             }
