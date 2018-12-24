@@ -349,7 +349,10 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static Int32 CalculateAge(this DateTime birthday)
         {
-            return DateTime.MinValue.AddDays(DateTime.Now.Subtract(birthday).TotalHours / 24).Year - 1;
+            if (birthday > DateTime.Now)
+                return (DateTime.MinValue.AddDays(birthday.Subtract(DateTime.Now).TotalHours / 24).Year - 1) * -1;
+            else
+                return DateTime.MinValue.AddDays(DateTime.Now.Subtract(birthday).TotalHours / 24).Year - 1;
         }
         /// <summary>
         /// Verify if the date is between a range of dates
