@@ -33,39 +33,29 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Convert Local DateTime to unix timestamp
         /// </summary>
-        /// <param name="localTime">Local DateTime object</param>
+        /// <param name="localDateTime">Local DateTime object</param>
         /// <returns></returns>
-        public static Int64 LocalToUnixTime(this DateTime localTime)
+        public static Int64 LocalToUnixTime(this DateTime localDateTime)
         {
-            if (localTime.Kind == DateTimeKind.Utc)
+            if (localDateTime.Kind == DateTimeKind.Utc)
                 throw new InvalidOperationException("Cannot use a utc DateTime. Needs to be a local or unspecified (assumed as a local) DateTime.");
-            if (localTime.Kind == DateTimeKind.Unspecified)
-                localTime = new DateTime(localTime.Ticks, DateTimeKind.Local);
+            if (localDateTime.Kind == DateTimeKind.Unspecified)
+                localDateTime = new DateTime(localDateTime.Ticks, DateTimeKind.Local);
 
-            var utcTime = localTime.ToUniversalTime();
+            var utcTime = localDateTime.ToUniversalTime();
             return UTCtoUnixTime(utcTime);
         }
         /// <summary>
         /// Convert UTC DateTime to unix timestamp
         /// </summary>
-        /// <param name="utcTimestamp">UTC DateTime object</param>
+        /// <param name="utcDateTime">UTC DateTime object</param>
         /// <returns></returns>
-        public static Int64 UTCtoUnixTime(DateTime utcTimestamp)
+        public static Int64 UTCtoUnixTime(this DateTime utcDateTime)
         {
-            return (utcTimestamp.Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
-        }
-
-        /// <summary>
-        /// Convert UTC DateTime to unix timestamp
-        /// </summary>
-        /// <param name="utcTimestamp">UTC DateTime object</param>
-        /// <returns>unix timestamp</returns>
-        public static Int64 UTCtoUnixTime(this DateTimeOffset utcTimestamp)
-        {
-            return (utcTimestamp.Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
+            return (utcDateTime.Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
         }
         /// <summary>
-        /// Strip the time part of a complete DateTime
+        /// Strip the time part of a DateTime
         /// </summary>
         /// <param name="dateWithTime">A DateTime</param>
         /// <returns></returns>
@@ -79,7 +69,7 @@ namespace Hto3.DateTimeHelpers
         /// <param name="startDate">The start date</param>
         /// <param name="endDate">The end date</param>
         /// <returns></returns>
-        public static IEnumerable<DateTime> EachDay(DateTime startDate, DateTime endDate)
+        public static IEnumerable<DateTime> EachDay(this DateTime startDate, DateTime endDate)
         {
             for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1))
                 yield return day;
@@ -91,7 +81,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime NextYear(this DateTime baseDate)
         {
-            return new DateTime(baseDate.Year + 1, 1, 1);
+            return baseDate.AddYears(1);
         }
         /// <summary>
         /// Get the first day of the next month of a base date
@@ -100,8 +90,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime NextMonth(this DateTime baseDate)
         {
-            var next = baseDate.AddMonths(1);
-            return new DateTime(next.Year, next.Month, 1);
+            return baseDate.AddMonths(1);
         }
         /// <summary>
         /// Get the next day of a base date
@@ -110,8 +99,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime NextDay(this DateTime baseDate)
         {
-            var next = baseDate.AddDays(1);
-            return new DateTime(next.Year, next.Month, next.Day);
+            return baseDate.AddDays(1);
         }
         /// <summary>
         /// Get the next hour of a base DateTime
@@ -120,8 +108,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime NextHour(this DateTime baseDate)
         {
-            var next = baseDate.AddHours(1);
-            return new DateTime(next.Year, next.Month, next.Day, next.Hour, 0, 0);
+            return baseDate.AddHours(1);
         }
         /// <summary>
         /// Get the next minute of a base DateTime
@@ -130,8 +117,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime NextMinute(this DateTime baseDate)
         {
-            var next = baseDate.AddMinutes(1);
-            return new DateTime(next.Year, next.Month, next.Day, next.Hour, next.Minute, 0);
+            return baseDate.AddMinutes(1);
         }
         /// <summary>
         /// Get the next second of a base DateTime
@@ -140,8 +126,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime NextSecond(this DateTime baseDate)
         {
-            var next = baseDate.AddSeconds(1);
-            return new DateTime(next.Year, next.Month, next.Day, next.Hour, next.Minute, next.Second);
+            return baseDate.AddSeconds(1);
         }
         /// <summary>
         /// Get the first day of the previous year of a base date
@@ -150,7 +135,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime PreviousYear(this DateTime baseDate)
         {
-            return new DateTime(baseDate.Year - 1, 1, 1);
+            return baseDate.AddYears(-1);
         }
         /// <summary>
         /// Get the first day of the previous month of a base date
@@ -159,8 +144,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime PreviousMonth(this DateTime baseDate)
         {
-            var previous = baseDate.AddMonths(-1);
-            return new DateTime(previous.Year, previous.Month, 1);
+            return baseDate.AddMonths(-1);
         }
         /// <summary>
         /// Get the previous day of a base date
@@ -169,8 +153,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime PreviousDay(this DateTime baseDate)
         {
-            var previous = baseDate.AddDays(-1);
-            return new DateTime(previous.Year, previous.Month, previous.Day);
+            return baseDate.AddDays(-1);
         }
         /// <summary>
         /// Get the previous hour of a base DateTime
@@ -179,8 +162,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime PreviousHour(this DateTime baseDate)
         {
-            var previous = baseDate.AddHours(-1);
-            return new DateTime(previous.Year, previous.Month, previous.Day, previous.Hour, 0, 0);
+            return baseDate.AddHours(-1);
         }
         /// <summary>
         /// Get the previous minute of a base DateTime
@@ -189,8 +171,7 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime PreviousMinute(this DateTime baseDate)
         {
-            var previous = baseDate.AddMinutes(-1);
-            return new DateTime(previous.Year, previous.Month, previous.Day, previous.Hour, previous.Minute, 0);
+            return baseDate.AddMinutes(-1);
         }
         /// <summary>
         /// Get the previous second of a base DateTime
@@ -228,6 +209,9 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime SetYear(this DateTime me, Int32 year)
         {
+            if (!DateTimeHelpers.IsValidDate(year, me.Month, me.Day))
+                throw new InvalidOperationException("Invalid month!");
+
             return new DateTime(year, me.Month, me.Day, me.Hour, me.Minute, me.Second, me.Millisecond);
         }
         /// <summary>
@@ -238,6 +222,9 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime SetMonth(this DateTime me, Int32 month)
         {
+            if (!DateTimeHelpers.IsValidDate(me.Year, month, me.Day))
+                throw new InvalidOperationException("Invalid month!");
+
             return new DateTime(me.Year, month, me.Day, me.Hour, me.Minute, me.Second, me.Millisecond);
         }
         /// <summary>
@@ -248,6 +235,9 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime SetDay(this DateTime me, Int32 day)
         {
+            if (!DateTimeHelpers.IsValidDate(me.Year, me.Month, day))
+                throw new InvalidOperationException("Invalid day!");
+
             return new DateTime(me.Year, me.Month, day, me.Hour, me.Minute, me.Second, me.Millisecond);
         }
         /// <summary>
@@ -258,6 +248,9 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime SetHour(this DateTime me, Int32 hour)
         {
+            if (!DateTimeHelpers.IsValidTime(hour, me.Minute, me.Second))
+                throw new InvalidOperationException("Invalid hour!");
+
             return new DateTime(me.Year, me.Month, me.Day, hour, me.Minute, me.Second, me.Millisecond);
         }
         /// <summary>
@@ -268,6 +261,9 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime SetMinute(this DateTime me, Int32 minute)
         {
+            if (!DateTimeHelpers.IsValidTime(me.Hour, minute, me.Second))
+                throw new InvalidOperationException("Invalid minute!");
+
             return new DateTime(me.Year, me.Month, me.Day, me.Hour, minute, me.Second, me.Millisecond);
         }
         /// <summary>
@@ -278,6 +274,9 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime SetSecond(this DateTime me, Int32 second)
         {
+            if (!DateTimeHelpers.IsValidTime(me.Hour, me.Minute, second))
+                throw new InvalidOperationException("Invalid minute!");
+
             return new DateTime(me.Year, me.Month, me.Day, me.Hour, me.Minute, second, me.Millisecond);
         }
         /// <summary>
@@ -333,59 +332,6 @@ namespace Hto3.DateTimeHelpers
         {
             return reference.AddDays(value * 7);
         }
-        /// <summary>
-        /// Add fortnights
-        /// </summary>
-        /// <param name="reference"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static DateTime AddFortnights(this DateTime reference, Int32 value)
-        {
-            var movedRef = reference.AddMonths(value / 2);
-
-            if (reference.Day > 15)
-            {
-                var daysPassedFortnight = reference.Day - 15;
-
-                if (value > 0)//advancing
-                {
-                    var aux = movedRef.AddMonths(1);
-                    return new DateTime(aux.Year, aux.Month, daysPassedFortnight > 15 ? 15 : daysPassedFortnight);
-                }
-                else//regress
-                {
-                    var aux = new DateTime(movedRef.Year, movedRef.Month, 1);
-                    return aux.AddDays(daysPassedFortnight - 1);
-                }
-            }
-            else
-            {
-                if (value > 0)//advancing
-                {
-                    return new DateTime
-                        (
-                            movedRef.Year,
-                            movedRef.Month,
-                            movedRef.Day + 15 > movedRef.AmountDaysInMonth()
-                                ? movedRef.AmountDaysInMonth()
-                                : movedRef.Day + 15
-                        );
-                }
-                else//regress
-                {
-                    var aux = movedRef.AddMonths(-1);
-                    return new DateTime
-                        (
-                            aux.Year,
-                            aux.Month,
-                            movedRef.Day + 15 > aux.AmountDaysInMonth()
-                                ? aux.AmountDaysInMonth()
-                                : movedRef.Day + 15
-                        );
-                }
-            }
-        }
-
         /// <summary>
         /// Calculate the difference between two dates.
         /// </summary>
@@ -457,6 +403,26 @@ namespace Hto3.DateTimeHelpers
                 if (month >= 1 && month <= 12)
                 {
                     if (DateTime.DaysInMonth(year, month) >= day && day >= 1)
+                        return true;
+                }
+            }
+
+            return false;
+        }
+        /// <summary>
+        /// Return true if the numbers representing the hour, minute and second of a time build a valid time.
+        /// </summary>
+        /// <param name="hour">hour</param>
+        /// <param name="minute">minute</param>
+        /// <param name="second">second</param>
+        /// <returns></returns>
+        public static Boolean IsValidTime(Int32 hour, Int32 minute, Int32 second)
+        {
+            if (hour <= 23 && hour >= 0)
+            {
+                if (minute <= 59 && minute >= 0)
+                {
+                    if (second <= 59 && second >= 0)
                         return true;
                 }
             }

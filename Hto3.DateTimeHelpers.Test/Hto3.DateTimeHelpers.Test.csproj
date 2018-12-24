@@ -50,9 +50,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddWeeks.cs" />
+    <Compile Include="AmountDaysInMonth.cs" />
+    <Compile Include="CalculateAge.cs" />
+    <Compile Include="DateDiff.cs" />
+    <Compile Include="EachDay.cs" />
+    <Compile Include="FirstDayOfMonth.cs" />
+    <Compile Include="GetMonthWeeks.cs" />
+    <Compile Include="IsBetween.cs" />
+    <Compile Include="IsValidDate.cs" />
+    <Compile Include="IsValidTime.cs" />
+    <Compile Include="LastDayOfMonth.cs" />
+    <Compile Include="LocalToUnixTime.cs" />
+    <Compile Include="Midnight.cs" />
+    <Compile Include="NextDay.cs" />
+    <Compile Include="NextEvenHour.cs" />
+    <Compile Include="NextFullHour.cs" />
+    <Compile Include="NextHalfHour.cs" />
+    <Compile Include="NextHour.cs" />
+    <Compile Include="NextMinute.cs" />
+    <Compile Include="NextMonth.cs" />
+    <Compile Include="NextOddHour.cs" />
+    <Compile Include="NextSecond.cs" />
+    <Compile Include="NextYear.cs" />
+    <Compile Include="Noon.cs" />
+    <Compile Include="PreviousDay.cs" />
+    <Compile Include="PreviousHour.cs" />
+    <Compile Include="PreviousMinute.cs" />
+    <Compile Include="PreviousMonth.cs" />
+    <Compile Include="PreviousSecond.cs" />
+    <Compile Include="PreviousYear.cs" />
+    <Compile Include="SetDay.cs" />
+    <Compile Include="SetHour.cs" />
+    <Compile Include="SetMillisecond.cs" />
+    <Compile Include="SetMinute.cs" />
+    <Compile Include="SetMonth.cs" />
+    <Compile Include="SetSecond.cs" />
+    <Compile Include="SetYear.cs" />
+    <Compile Include="StripTime.cs" />
     <Compile Include="UnixTimeToUTCDateTime.cs" />
     <Compile Include="UnixTimeToDateTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UTCtoUnixTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
