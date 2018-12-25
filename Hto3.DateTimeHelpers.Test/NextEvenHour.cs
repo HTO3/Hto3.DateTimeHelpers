@@ -10,5 +10,6 @@ namespace Hto3.DateTimeHelpers.Test
     [TestClass]
     public class NextEvenHour
     {
+
     }
 }
