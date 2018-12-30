@@ -10,5 +10,11 @@ namespace Hto3.DateTimeHelpers.Test
     [TestClass]
     public class UTCtoUnixTime
     {
+        [TestMethod]
+        public void NormalUse()
+        {
+            var utc = new DateTime(2018, 12, 11, 23, 50, 30, DateTimeKind.Utc);
+            Assert.AreEqual(DateTimeHelpers.UTCtoUnixTime(utc), 1544572230);
+        }
     }
 }
