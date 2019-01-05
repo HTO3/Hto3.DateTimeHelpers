@@ -75,113 +75,130 @@ namespace Hto3.DateTimeHelpers
                 yield return day;
         }
         /// <summary>
-        /// Get the first day of the next year of a base date
+        /// Get the first day of the next year of a base date. This is the same as calling .AddYears(1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextYear(this DateTime baseDate)
         {
             return baseDate.AddYears(1);
         }
         /// <summary>
-        /// Get the first day of the next month of a base date
+        /// Get the first day of the next month of a base date. This is the same as calling .AddMonths(1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextMonth(this DateTime baseDate)
         {
             return baseDate.AddMonths(1);
         }
         /// <summary>
-        /// Get the next day of a base date
+        /// Get the next day of a base date. This is the same as calling .AddDays(1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextDay(this DateTime baseDate)
         {
             return baseDate.AddDays(1);
         }
         /// <summary>
-        /// Get the next hour of a base DateTime
+        /// Get the next week of a base date. This is the same as calling .AddWeeks(1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
+        /// <returns></returns>
+        public static DateTime NextWeek(this DateTime baseDate)
+        {
+            return baseDate.AddWeeks(1);
+        }
+        /// <summary>
+        /// Get the next hour of a base DateTime. This is the same as calling .AddHours(1).
+        /// </summary>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextHour(this DateTime baseDate)
         {
             return baseDate.AddHours(1);
         }
         /// <summary>
-        /// Get the next minute of a base DateTime
+        /// Get the next minute of a base DateTime. This is the same as calling .AddMinutes(1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextMinute(this DateTime baseDate)
         {
             return baseDate.AddMinutes(1);
         }
         /// <summary>
-        /// Get the next second of a base DateTime
+        /// Get the next second of a base DateTime. This is the same as calling .AddSeconds(1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextSecond(this DateTime baseDate)
         {
             return baseDate.AddSeconds(1);
         }
         /// <summary>
-        /// Get the first day of the previous year of a base date
+        /// Get the first day of the previous year of a base date. This is the same as calling .AddYears(-1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime PreviousYear(this DateTime baseDate)
         {
             return baseDate.AddYears(-1);
         }
         /// <summary>
-        /// Get the first day of the previous month of a base date
+        /// Get the first day of the previous month of a base date. This is the same as calling .AddMonths(-1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime PreviousMonth(this DateTime baseDate)
         {
             return baseDate.AddMonths(-1);
         }
         /// <summary>
-        /// Get the previous day of a base date
+        /// Get the previous day of a base date. This is the same as calling .AddDays(-1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime PreviousDay(this DateTime baseDate)
         {
             return baseDate.AddDays(-1);
         }
         /// <summary>
-        /// Get the previous hour of a base DateTime
+        /// Get the previous week of a base DateTime. This is the same as calling .AddWeeks(-1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
+        /// <returns></returns>
+        public static DateTime PreviousWeek(this DateTime baseDate)
+        {
+            return baseDate.AddWeeks(-1);
+        }
+        /// <summary>
+        /// Get the previous hour of a base DateTime. This is the same as calling .AddHours(-1).
+        /// </summary>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime PreviousHour(this DateTime baseDate)
         {
             return baseDate.AddHours(-1);
         }
         /// <summary>
-        /// Get the previous minute of a base DateTime
+        /// Get the previous minute of a base DateTime. This is the same as calling .AddMinutes(-1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime PreviousMinute(this DateTime baseDate)
         {
             return baseDate.AddMinutes(-1);
         }
         /// <summary>
-        /// Get the previous second of a base DateTime
+        /// Get the previous second of a base DateTime. This is the same as calling .AddSeconds(-1).
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime PreviousSecond(this DateTime baseDate)
         {
-            var previous = baseDate.AddSeconds(-1);
-            return new DateTime(previous.Year, previous.Month, previous.Day, previous.Hour, previous.Minute, previous.Second);
+            return baseDate.AddSeconds(-1);
         }
         /// <summary>
         /// Return a new datetime with the same date but on midnight
@@ -204,7 +221,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Change the year of a DateTime
         /// </summary>
-        /// <param name="me"></param>
+        /// <param name="me">A DateTime to change</param>
         /// <param name="year"></param>
         /// <returns></returns>
         public static DateTime SetYear(this DateTime me, Int32 year)
@@ -217,7 +234,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Change the month of a DateTime
         /// </summary>
-        /// <param name="me"></param>
+        /// <param name="me">A DateTime to change</param>
         /// <param name="month"></param>
         /// <returns></returns>
         public static DateTime SetMonth(this DateTime me, Int32 month)
@@ -230,7 +247,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Change the day of a DateTime
         /// </summary>
-        /// <param name="me"></param>
+        /// <param name="me">A DateTime to change</param>
         /// <param name="day"></param>
         /// <returns></returns>
         public static DateTime SetDay(this DateTime me, Int32 day)
@@ -243,7 +260,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Change the hour of a DateTime
         /// </summary>
-        /// <param name="me"></param>
+        /// <param name="me">A DateTime to change</param>
         /// <param name="hour"></param>
         /// <returns></returns>
         public static DateTime SetHour(this DateTime me, Int32 hour)
@@ -256,7 +273,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Change the minute of a DateTime
         /// </summary>
-        /// <param name="me"></param>
+        /// <param name="me">A DateTime to change</param>
         /// <param name="minute"></param>
         /// <returns></returns>
         public static DateTime SetMinute(this DateTime me, Int32 minute)
@@ -269,7 +286,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Change the second of a DateTime
         /// </summary>
-        /// <param name="me"></param>
+        /// <param name="me">A DateTime to change</param>
         /// <param name="second"></param>
         /// <returns></returns>
         public static DateTime SetSecond(this DateTime me, Int32 second)
@@ -282,7 +299,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Change the milisecond of a DateTime
         /// </summary>
-        /// <param name="me"></param>
+        /// <param name="me">A DateTime to change</param>
         /// <param name="millisecond"></param>
         /// <returns></returns>
         public static DateTime SetMillisecond(this DateTime me, Int32 millisecond)
@@ -358,9 +375,9 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Verify if the date is between a range of dates
         /// </summary>
-        /// <param name="reference">Data a se verificar</param>
-        /// <param name="start">Data inicio do período</param>
-        /// <param name="end">Data término do período</param>
+        /// <param name="reference">Date to verify</param>
+        /// <param name="start">Start date</param>
+        /// <param name="end">End date</param>
         /// <returns>Verdadeiro, se a data estiver entre as duas outras informadas (inclusive nas duas pontas)</returns>
         public static Boolean IsBetween(this DateTime reference, DateTime start, DateTime end)
         {
@@ -369,8 +386,8 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Return the date of the first day in the specified month
         /// </summary>
-        /// <param name="value">Data para tomar como referência</param>
-        /// <returns>Data no primeiro dia do mês, ou seja, dia 1</returns>
+        /// <param name="value">Date to use as reference</param>
+        /// <returns></returns>
         public static DateTime FirstDayOfMonth(this DateTime value)
         {
             return new DateTime(value.Year, value.Month, 1);
@@ -378,8 +395,8 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Return the amount of days in the month
         /// </summary>
-        /// <param name="value">Data para tomar como referência</param>
-        /// <returns>Quantidade de dias no mês.</returns>
+        /// <param name="value">Date to use as reference</param>
+        /// <returns></returns>
         public static Int32 AmountDaysInMonth(this DateTime value)
         {
             return DateTime.DaysInMonth(value.Year, value.Month);
@@ -387,8 +404,8 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Return a new DateTime on the last day of the month based on the informed DateTime.
         /// </summary>
-        /// <param name="value">Data para tomar como referência</param>
-        /// <returns>Data no último dia do mês, ou seja, dia 28, 29, 30 ou 31</returns>
+        /// <param name="value">Date to use as reference</param>
+        /// <returns></returns>
         public static DateTime LastDayOfMonth(this DateTime value)
         {
             return new DateTime(value.Year, value.Month, value.AmountDaysInMonth());
@@ -437,25 +454,25 @@ namespace Hto3.DateTimeHelpers
         /// Return the next odd full hour. Example: Now it's 09/09/2018 15:36:12 so the next odd full hour will be 09/09/2018 17:00:00.
         /// </summary>
         /// <returns></returns>
-        public static DateTime NextOddHour()
+        public static DateTime NextFullOddHour(DateTime reference)
         {
-            var next = DateTimeHelpers.NextFullHour();
+            var next = DateTimeHelpers.NextFullHour(reference);
 
             if (next.Hour % 2 != 0)
                 return next;
             else
-                return next.AddHours(1);
+                return DateTimeHelpers.NextFullHour(next);
         }
         /// <summary>
         /// Return the next even full hour. Example: Now it's 09/09/2018 15:36:12 so the next even full hour will be 09/09/2018 16:00:00.
         /// </summary>
         /// <returns></returns>
-        public static DateTime NextEvenHour()
+        public static DateTime NextFullEvenHour(DateTime reference)
         {
-            var next = DateTimeHelpers.NextFullHour();
+            var next = DateTimeHelpers.NextFullHour(reference);
 
             if (next.Hour % 2 != 0)
-                return next.AddHours(1);
+                return DateTimeHelpers.NextFullHour(next);
             else
                 return next;
         }
@@ -463,23 +480,21 @@ namespace Hto3.DateTimeHelpers
         /// Return the next full hour. Example: Now it's 09/09/2018 15:36:12 so the next half hour will be 09/09/2018 16:00:00.
         /// </summary>
         /// <returns></returns>
-        public static DateTime NextFullHour()
+        public static DateTime NextFullHour(DateTime reference)
         {
-            var nextHour = DateTime.Now.AddHours(1);
+            var nextHour = reference.AddHours(1);
             return new DateTime(nextHour.Year, nextHour.Month, nextHour.Day, nextHour.Hour, 0, 0);
         }
         /// <summary>
         /// Return the next half hour. Example: Now it's 09/09/2018 15:36:12 so the next half hour will be 09/09/2018 16:00:00.
         /// </summary>
         /// <returns></returns>
-        public static DateTime NextHalfHour()
+        public static DateTime NextHalfHour(DateTime reference)
         {
-            var now = DateTime.Now;
-
-            if (now.Minute >= 30)
-                return DateTimeHelpers.NextFullHour();
+            if (reference.Minute >= 30)
+                return DateTimeHelpers.NextFullHour(reference);
             else
-                return new DateTime(now.Year, now.Month, now.Day, now.Hour, 30, 0);
+                return new DateTime(reference.Year, reference.Month, reference.Day, reference.Hour, 30, 0);
         }
     }
 }

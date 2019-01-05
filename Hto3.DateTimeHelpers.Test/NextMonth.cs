@@ -10,5 +10,12 @@ namespace Hto3.DateTimeHelpers.Test
     [TestClass]
     public class NextMonth
     {
+        [TestMethod]
+        public void NormalUse()
+        {
+            var date = new DateTime(2010, 10, 3, 12, 22, 7);
+            var date2 = new DateTime(2010, 11, 3, 12, 22, 7);
+            Assert.AreEqual(DateTimeHelpers.NextMonth(date), date2);
+        }
     }
 }

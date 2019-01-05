@@ -64,14 +64,15 @@
     <Compile Include="LocalToUnixTime.cs" />
     <Compile Include="Midnight.cs" />
     <Compile Include="NextDay.cs" />
-    <Compile Include="NextEvenHour.cs" />
+    <Compile Include="NextFullEvenHour.cs" />
     <Compile Include="NextFullHour.cs" />
     <Compile Include="NextHalfHour.cs" />
     <Compile Include="NextHour.cs" />
     <Compile Include="NextMinute.cs" />
     <Compile Include="NextMonth.cs" />
-    <Compile Include="NextOddHour.cs" />
+    <Compile Include="NextFullOddHour.cs" />
     <Compile Include="NextSecond.cs" />
+    <Compile Include="NextWeek.cs" />
     <Compile Include="NextYear.cs" />
     <Compile Include="Noon.cs" />
     <Compile Include="PreviousDay.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="PreviousMinute.cs" />
     <Compile Include="PreviousMonth.cs" />
     <Compile Include="PreviousSecond.cs" />
+    <Compile Include="PreviousWeek.cs" />
     <Compile Include="PreviousYear.cs" />
     <Compile Include="SetDay.cs" />
     <Compile Include="SetHour.cs" />
