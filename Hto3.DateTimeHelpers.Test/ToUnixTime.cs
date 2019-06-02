@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 namespace Hto3.DateTimeHelpers.Test
 {
     [TestClass]
-    public class UTCtoUnixTime
+    public class ToUnixTime
     {
         [TestMethod]
         public void NormalUse()
         {
-            var utc = new DateTime(2018, 12, 11, 23, 50, 30, DateTimeKind.Utc);
-            Assert.AreEqual(DateTimeHelpers.UTCtoUnixTime(utc), 1544572230);
+            Assert.AreEqual(DateTimeHelpers.ToUnixTime(new DateTime(2018, 2, 1, 11, 45, 22)), 1517492722);
         }
     }
 }

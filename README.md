@@ -14,67 +14,72 @@ A set of extension methods that can be used to facilitate the manipulation of da
 ### UnixTimeToUTCDateTime
 
 ```csharp
-1544572230L.UnixTimeToUTCDateTime() == new DateTime(2018, 12, 11, 23, 50, 30, DateTimeKind.Utc)
+1544572230L.UnixTimeToUTCDateTime() == new DateTime(2018, 12, 11, 23, 50, 30, DateTimeKind.Utc);
 ```
 
 ### UnixTimeToDateTime
 
 ```csharp
-1544572230L.UnixTimeToDateTime() == new DateTime(2018, 12, 11, 21, 50, 30) //When local is -02:00 GMT
+1544572230L.UnixTimeToDateTime() == new DateTime(2018, 12, 11, 21, 50, 30); //When local is -02:00 GMT
 ```
 
-### LocalToUnixTime
+### ToUnixTime
 
 ```csharp
-//todo: put an example of use
-```
-
-### UTCtoUnixTime
-
-```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).ToUnixTime() == 1544572230L;
 ```
 
 ### StripTime
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).StripTime() == new DateTime(2018, 12, 11);
 ```
 
 ### EachDay
 
 ```csharp
-//todo: put an example of use
+var start = new DateTime(2018, 2, 26);
+var end = new DateTime(2018, 3, 4);
+
+var result = start.EachDay(end).ToArray();
+
+result[0] == new DateTime(2018, 2, 26);
+result[1] == new DateTime(2018, 2, 27);
+result[2] == new DateTime(2018, 2, 28);
+result[3] == new DateTime(2018, 3, 1);
+result[4] == new DateTime(2018, 3, 2);
+result[5] == new DateTime(2018, 3, 3);
+result[6] == new DateTime(2018, 3, 4);
 ```
 
 ### NextYear
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 3, 4).NextYear() == new DateTime(2019, 3, 4);
 ```
 
 ### NextDay
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 3, 4).NextDay() == new DateTime(2018, 3, 5);
 ```
 
 ### NextWeek
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 3, 4).NextDay() == new DateTime(2018, 3, 11);
 ```
 
 ### NextHour
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).NextHour() == new DateTime(2018, 12, 11, 22, 50, 30);
 ```
 
 ### NextMinute
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).NextMinute() == new DateTime(2018, 12, 11, 21, 51, 30);
 ```
 
 ### NextSecond

@@ -31,28 +31,14 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(result.Ticks);
         }
         /// <summary>
-        /// Convert Local DateTime to unix timestamp
+        /// Convert a DateTime to unix timestamp
         /// </summary>
-        /// <param name="localDateTime">Local DateTime object</param>
+        /// <param name="dateTime">DateTime object</param>
         /// <returns></returns>
-        public static Int64 LocalToUnixTime(this DateTime localDateTime)
+        public static Int64 ToUnixTime(this DateTime dateTime)
         {
-            if (localDateTime.Kind == DateTimeKind.Utc)
-                throw new InvalidOperationException("Cannot use a utc DateTime. Needs to be a local or unspecified (assumed as a local) DateTime.");
-            if (localDateTime.Kind == DateTimeKind.Unspecified)
-                localDateTime = new DateTime(localDateTime.Ticks, DateTimeKind.Local);
-
-            var utcTime = localDateTime.ToUniversalTime();
-            return UTCtoUnixTime(utcTime);
-        }
-        /// <summary>
-        /// Convert UTC DateTime to unix timestamp
-        /// </summary>
-        /// <param name="utcDateTime">UTC DateTime object</param>
-        /// <returns></returns>
-        public static Int64 UTCtoUnixTime(this DateTime utcDateTime)
-        {
-            return (utcDateTime.Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
+            var utcTime = dateTime.Kind == DateTimeKind.Utc ? dateTime : dateTime.ToUniversalTime();
+            return (utcTime.Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
         }
         /// <summary>
         /// Strip the time part of a DateTime
