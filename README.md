@@ -14,13 +14,13 @@ A set of extension methods that can be used to facilitate the manipulation of da
 ### UnixTimeToUTCDateTime
 
 ```csharp
-//todo: put an example of use
+1544572230L.UnixTimeToUTCDateTime() == new DateTime(2018, 12, 11, 23, 50, 30, DateTimeKind.Utc)
 ```
 
 ### UnixTimeToDateTime
 
 ```csharp
-//todo: put an example of use
+1544572230L.UnixTimeToDateTime() == new DateTime(2018, 12, 11, 21, 50, 30) //When local is -02:00 GMT
 ```
 
 ### LocalToUnixTime
