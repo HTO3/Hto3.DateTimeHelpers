@@ -20,13 +20,13 @@ A set of extension methods that can be used to facilitate the manipulation of da
 ### UnixTimeToDateTime
 
 ```csharp
-1544572230L.UnixTimeToDateTime() == new DateTime(2018, 12, 11, 21, 50, 30); //When local is -02:00 GMT
+1544572230L.UnixTimeToDateTime() == new DateTime(2018, 12, 11, 21, 50, 30); //When local timezone is -02:00 GMT
 ```
 
 ### ToUnixTime
 
 ```csharp
-new DateTime(2018, 12, 11, 21, 50, 30).ToUnixTime() == 1544572230L;
+new DateTime(2018, 12, 11, 21, 50, 30).ToUnixTime() == 1544572230L; //When local timezone is -02:00 GMT
 ```
 
 ### StripTime
@@ -163,19 +163,19 @@ new DateTime(2018, 12, 11, 21, 50, 30).SetDay(27) == new DateTime(2018, 12, 27, 
 ### SetHour
 
 ```csharp
-new DateTime(2018, 12, 11, 21, 50, 30).SetDay(1) == new DateTime(2018, 12, 1, 21, 50, 30);
+new DateTime(2018, 12, 11, 21, 50, 30).SetHour(1) == new DateTime(2018, 12, 11, 1, 50, 30);
 ```
 
 ### SetMinute
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).SetMinute(9) == new DateTime(2018, 12, 11, 9, 50, 30);
 ```
 
 ### SetSecond
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).SetSecond(0) == new DateTime(2018, 12, 11, 21, 50, 0);
 ```
 
 ### SetMillisecond
