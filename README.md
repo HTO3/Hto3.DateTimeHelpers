@@ -85,85 +85,85 @@ new DateTime(2018, 12, 11, 21, 50, 30).NextMinute() == new DateTime(2018, 12, 11
 ### NextSecond
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).NextSecond() == new DateTime(2018, 12, 11, 21, 50, 31);
 ```
 
 ### PreviousYear
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).PreviousYear() == new DateTime(2017, 12, 11, 21, 50, 30);
 ```
 
 ### PreviousMonth
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).PreviousMonth() == new DateTime(2018, 11, 11, 21, 50, 30);
 ```
 
 ### PreviousDay
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).PreviousDay() == new DateTime(2018, 12, 10, 21, 50, 30);
 ```
 
 ### PreviousWeek
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).PreviousWeek() == new DateTime(2018, 12, 8, 21, 50, 30);
 ```
 
 ### PreviousHour
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).PreviousHour() == new DateTime(2018, 12, 11, 20, 50, 30);
 ```
 
 ### PreviousMinute
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).PreviousMinute() == new DateTime(2018, 12, 11, 21, 49, 30);
 ```
 
 ### PreviousSecond
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).PreviousSecond() == new DateTime(2018, 12, 11, 21, 50, 29);
 ```
 
 ### Midnight
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).Midnight() == new DateTime(2018, 12, 11, 0, 0, 0);
 ```
 
 ### Noon
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).Noon() == new DateTime(2018, 12, 11, 12, 0, 0);
 ```
 
 ### SetYear
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).SetYear(1999) == new DateTime(1999, 12, 11, 21, 50, 30);
 ```
 
 ### SetMonth
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).SetMonth(10) == new DateTime(2018, 10, 11, 21, 50, 30);
 ```
 
 ### SetDay
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).SetDay(27) == new DateTime(2018, 12, 27, 21, 50, 30);
 ```
 
 ### SetHour
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30).SetDay(1) == new DateTime(2018, 12, 1, 21, 50, 30);
 ```
 
 ### SetMinute
