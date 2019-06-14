@@ -181,37 +181,57 @@ new DateTime(2018, 12, 11, 21, 50, 30).SetSecond(0) == new DateTime(2018, 12, 11
 ### SetMillisecond
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 12, 11, 21, 50, 30, 3).SetMillisecond(9) == new DateTime(2018, 12, 11, 21, 50, 30, 9);
 ```
 
 ### GetMonthWeeks
 
 ```csharp
-//todo: put an example of use
+var weeks = DateTimeHelpers.GetMonthWeeks(2, 2018);
+
+weeks.ElementAt(0).Item1 == new DateTime(2018, 2, 1);//week start
+weeks.ElementAt(0).Item2 == new DateTime(2018, 2, 3);//week end
+
+weeks.ElementAt(1).Item1 == new DateTime(2018, 2, 4);//week start
+weeks.ElementAt(1).Item2 == new DateTime(2018, 2, 10);//week end
+
+weeks.ElementAt(2).Item1 == new DateTime(2018, 2, 11);//week start
+weeks.ElementAt(2).Item2 == new DateTime(2018, 2, 17);//week end
+
+weeks.ElementAt(3).Item1 == new DateTime(2018, 2, 18);//week start
+weeks.ElementAt(3).Item2 == new DateTime(2018, 2, 24);//week end
+
+weeks.ElementAt(4).Item1 == new DateTime(2018, 2, 25);//week start
+weeks.ElementAt(4).Item2 == new DateTime(2018, 2, 28);//week end
 ```
 
 ### AddWeeks
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 10, 1).AddWeeks(1) == new DateTime(2018, 10, 8);
 ```
 
 ### DateDiff
 
 ```csharp
-//todo: put an example of use
+var start = new DateTime(2010, 1, 1);
+var end = new DateTime(2010, 1, 2);
+start.DateDiff(end) == TimeSpan.FromDays(1);
 ```
 
 ### CalculateAge
 
 ```csharp
-//todo: put an example of use
+//assuming today as 02/26/2019
+new DateTime(2018, 2, 25).CalculateAge() == 1;
 ```
 
 ### IsBetween
 
 ```csharp
-//todo: put an example of use
+var start = new DateTime(2009, 1, 1);
+var end = new DateTime(2010, 1, 2);
+new DateTime(2010, 1, 1).IsBetween(start, end) == true;
 ```
 
 ### FirstDayOfMonth
@@ -235,13 +255,15 @@ new DateTime(2018, 12, 11, 21, 50, 30).SetSecond(0) == new DateTime(2018, 12, 11
 ### IsValidDate
 
 ```csharp
-//todo: put an example of use
+DateTimeHelpers.IsValidDate(2010, 1, 20) == true;
+DateTimeHelpers.IsValidDate(99, -1, 99) == false;
 ```
 
 ### IsValidTime
 
 ```csharp
-//todo: put an example of use
+DateTimeHelpers.IsValidTime(23, 59, 1) == true;
+DateTimeHelpers.IsValidTime(24, -1, 0) == false;
 ```
 
 ### NextFullOddHour
