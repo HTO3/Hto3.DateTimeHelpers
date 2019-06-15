@@ -11,7 +11,7 @@ namespace Hto3.DateTimeHelpers
         private static readonly DateTime _epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         private static readonly Int64 _epochTicks = new DateTime(1970, 1, 1, 0, 0, 0).Ticks;
         /// <summary>
-        /// Convert unix timestamp to UTC DateTime
+        /// Convert unix timestamp to UTC DateTime.
         /// </summary>
         /// <param name="unixTime">Unix Timestamp</param>
         /// <returns></returns>
@@ -21,7 +21,7 @@ namespace Hto3.DateTimeHelpers
             return result;
         }
         /// <summary>
-        /// Convert unix timestamp to DateTime
+        /// Convert unix timestamp to DateTime.
         /// </summary>
         /// <param name="unixTime">Unix Timestamp</param>
         /// <returns></returns>
@@ -31,7 +31,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(result.Ticks);
         }
         /// <summary>
-        /// Convert a DateTime to unix timestamp
+        /// Convert a DateTime to unix timestamp.
         /// </summary>
         /// <param name="dateTime">DateTime object</param>
         /// <returns></returns>
@@ -41,7 +41,7 @@ namespace Hto3.DateTimeHelpers
             return (utcTime.Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
         }
         /// <summary>
-        /// Strip the time part of a DateTime
+        /// Strip the time part of a DateTime.
         /// </summary>
         /// <param name="dateWithTime">A DateTime</param>
         /// <returns></returns>
@@ -50,7 +50,7 @@ namespace Hto3.DateTimeHelpers
             return dateWithTime.Date;
         }
         /// <summary>
-        /// Gets the dates between date range
+        /// Gets the dates between date range.
         /// </summary>
         /// <param name="startDate">The start date</param>
         /// <param name="endDate">The end date</param>
@@ -187,7 +187,7 @@ namespace Hto3.DateTimeHelpers
             return baseDate.AddSeconds(-1);
         }
         /// <summary>
-        /// Return a new datetime with the same date but on midnight
+        /// Return a new datetime with the same date but on midnight.
         /// </summary>
         /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
@@ -196,7 +196,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(baseDate.Year, baseDate.Month, baseDate.Day, 0, 0, 0);
         }
         /// <summary>
-        /// Return a new datetime with the same date but on noon
+        /// Return a new datetime with the same date but on noon.
         /// </summary>
         /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
@@ -205,7 +205,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(baseDate.Year, baseDate.Month, baseDate.Day, 12, 0, 0);
         }
         /// <summary>
-        /// Change the year of a DateTime
+        /// Change the year of a DateTime.
         /// </summary>
         /// <param name="me">A DateTime to change</param>
         /// <param name="year">The new year</param>
@@ -218,7 +218,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(year, me.Month, me.Day, me.Hour, me.Minute, me.Second, me.Millisecond);
         }
         /// <summary>
-        /// Change the month of a DateTime
+        /// Change the month of a DateTime.
         /// </summary>
         /// <param name="me">A DateTime to change</param>
         /// <param name="month">The new month</param>
@@ -231,7 +231,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(me.Year, month, me.Day, me.Hour, me.Minute, me.Second, me.Millisecond);
         }
         /// <summary>
-        /// Change the day of a DateTime
+        /// Change the day of a DateTime.
         /// </summary>
         /// <param name="me">A DateTime to change</param>
         /// <param name="day">the new day</param>
@@ -244,7 +244,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(me.Year, me.Month, day, me.Hour, me.Minute, me.Second, me.Millisecond);
         }
         /// <summary>
-        /// Change the hour of a DateTime
+        /// Change the hour of a DateTime.
         /// </summary>
         /// <param name="me">A DateTime to change</param>
         /// <param name="hour">The new hour</param>
@@ -257,7 +257,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(me.Year, me.Month, me.Day, hour, me.Minute, me.Second, me.Millisecond);
         }
         /// <summary>
-        /// Change the minute of a DateTime
+        /// Change the minute of a DateTime.
         /// </summary>
         /// <param name="me">A DateTime to change</param>
         /// <param name="minute">The new minute</param>
@@ -270,7 +270,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(me.Year, me.Month, me.Day, me.Hour, minute, me.Second, me.Millisecond);
         }
         /// <summary>
-        /// Change the second of a DateTime
+        /// Change the second of a DateTime.
         /// </summary>
         /// <param name="me">A DateTime to change</param>
         /// <param name="second">The new second</param>
@@ -283,7 +283,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(me.Year, me.Month, me.Day, me.Hour, me.Minute, second, me.Millisecond);
         }
         /// <summary>
-        /// Change the milisecond of a DateTime
+        /// Change the milisecond of a DateTime.
         /// </summary>
         /// <param name="me">A DateTime to change</param>
         /// <param name="millisecond">The new millisecond</param>
@@ -293,7 +293,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(me.Year, me.Month, me.Day, me.Hour, me.Minute, me.Second, millisecond);
         }
         /// <summary>
-        /// Get a collection of weeks of a month
+        /// Get a collection of weeks of a month.
         /// </summary>
         /// <param name="month">The month</param>
         /// <param name="year">The year</param>
@@ -327,7 +327,7 @@ namespace Hto3.DateTimeHelpers
             return output;
         }
         /// <summary>
-        /// Add weeks
+        /// Add weeks.
         /// </summary>
         /// <param name="reference">The point in your timeline</param>
         /// <param name="value">Amount weeks to add</param>
@@ -359,7 +359,7 @@ namespace Hto3.DateTimeHelpers
                 return DateTime.MinValue.AddDays(DateTime.Now.Subtract(birthday).TotalHours / 24).Year - 1;
         }
         /// <summary>
-        /// Verify if the date is between a range of dates
+        /// Verify if the date is between a range of dates.
         /// </summary>
         /// <param name="reference">Date to verify</param>
         /// <param name="start">Start date</param>
@@ -370,7 +370,7 @@ namespace Hto3.DateTimeHelpers
             return reference >= start && reference <= end;
         }
         /// <summary>
-        /// Return the date of the first day in the specified month
+        /// Return the date of the first day in the specified month.
         /// </summary>
         /// <param name="value">Date to use as reference</param>
         /// <returns></returns>
@@ -379,7 +379,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(value.Year, value.Month, 1);
         }
         /// <summary>
-        /// Return the amount of days in the month
+        /// Return the amount of days in the month.
         /// </summary>
         /// <param name="value">Date to use as reference</param>
         /// <returns></returns>
