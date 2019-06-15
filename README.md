@@ -237,19 +237,21 @@ new DateTime(2010, 1, 1).IsBetween(start, end) == true;
 ### FirstDayOfMonth
 
 ```csharp
-//todo: put an example of use
+new DateTime(2018, 2, 26).FirstDayOfMonth() == new DateTime(2018, 2, 1);
 ```
 
 ### AmountDaysInMonth
 
 ```csharp
-//todo: put an example of use
+//Date used only to extract the year and month
+new DateTime(2018, 1, 1).AmountDaysInMonth() == 31;
 ```
 
 ### LastDayOfMonth
 
 ```csharp
-//todo: put an example of use
+//Date used only to extract the year and month
+new DateTime(2018, 1, 1).AmountDaysInMonth() == 31;
 ```
 
 ### IsValidDate
@@ -269,23 +271,31 @@ DateTimeHelpers.IsValidTime(24, -1, 0) == false;
 ### NextFullOddHour
 
 ```csharp
-//todo: put an example of use
+var dateAndTime = new DateTime(2010, 10, 3, 12, 22, 7);
+var expected = new DateTime(2010, 10, 3, 13, 0, 0);
+dateAndTime.NextFullOddHour() == expected;
 ```
 
 ### NextFullEvenHour
 
 ```csharp
-//todo: put an example of use
+var dateAndTime = new DateTime(2010, 10, 3, 12, 22, 7);
+var expected = new DateTime(2010, 10, 3, 14, 0, 0);
+dateAndTime.NextFullOddHour() == expected;
 ```
 
 ### NextFullHour
 
 ```csharp
-//todo: put an example of use
+var dateAndTime = new DateTime(2010, 10, 3, 12, 22, 7);
+var expected = new DateTime(2010, 10, 3, 13, 0, 0);
+dateAndTime.NextFullOddHour() == expected;
 ```
 
 ### NextHalfHour
 
 ```csharp
-//todo: put an example of use
+var dateAndTime = new DateTime(2010, 10, 3, 12, 22, 7);
+var expected = new DateTime(2010, 10, 3, 12, 30, 0);
+dateAndTime.NextFullOddHour() == expected;
 ```

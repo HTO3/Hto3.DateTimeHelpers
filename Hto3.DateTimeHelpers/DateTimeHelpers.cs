@@ -189,7 +189,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Return a new datetime with the same date but on midnight
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime Midnight(this DateTime baseDate)
         {
@@ -198,7 +198,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Return a new datetime with the same date but on noon
         /// </summary>
-        /// <param name="baseDate"></param>
+        /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime Noon(this DateTime baseDate)
         {
@@ -208,7 +208,7 @@ namespace Hto3.DateTimeHelpers
         /// Change the year of a DateTime
         /// </summary>
         /// <param name="me">A DateTime to change</param>
-        /// <param name="year"></param>
+        /// <param name="year">The new year</param>
         /// <returns></returns>
         public static DateTime SetYear(this DateTime me, Int32 year)
         {
@@ -221,7 +221,7 @@ namespace Hto3.DateTimeHelpers
         /// Change the month of a DateTime
         /// </summary>
         /// <param name="me">A DateTime to change</param>
-        /// <param name="month"></param>
+        /// <param name="month">The new month</param>
         /// <returns></returns>
         public static DateTime SetMonth(this DateTime me, Int32 month)
         {
@@ -234,7 +234,7 @@ namespace Hto3.DateTimeHelpers
         /// Change the day of a DateTime
         /// </summary>
         /// <param name="me">A DateTime to change</param>
-        /// <param name="day"></param>
+        /// <param name="day">the new day</param>
         /// <returns></returns>
         public static DateTime SetDay(this DateTime me, Int32 day)
         {
@@ -247,7 +247,7 @@ namespace Hto3.DateTimeHelpers
         /// Change the hour of a DateTime
         /// </summary>
         /// <param name="me">A DateTime to change</param>
-        /// <param name="hour"></param>
+        /// <param name="hour">The new hour</param>
         /// <returns></returns>
         public static DateTime SetHour(this DateTime me, Int32 hour)
         {
@@ -260,7 +260,7 @@ namespace Hto3.DateTimeHelpers
         /// Change the minute of a DateTime
         /// </summary>
         /// <param name="me">A DateTime to change</param>
-        /// <param name="minute"></param>
+        /// <param name="minute">The new minute</param>
         /// <returns></returns>
         public static DateTime SetMinute(this DateTime me, Int32 minute)
         {
@@ -273,7 +273,7 @@ namespace Hto3.DateTimeHelpers
         /// Change the second of a DateTime
         /// </summary>
         /// <param name="me">A DateTime to change</param>
-        /// <param name="second"></param>
+        /// <param name="second">The new second</param>
         /// <returns></returns>
         public static DateTime SetSecond(this DateTime me, Int32 second)
         {
@@ -286,7 +286,7 @@ namespace Hto3.DateTimeHelpers
         /// Change the milisecond of a DateTime
         /// </summary>
         /// <param name="me">A DateTime to change</param>
-        /// <param name="millisecond"></param>
+        /// <param name="millisecond">The new millisecond</param>
         /// <returns></returns>
         public static DateTime SetMillisecond(this DateTime me, Int32 millisecond)
         {
@@ -329,8 +329,8 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Add weeks
         /// </summary>
-        /// <param name="reference"></param>
-        /// <param name="value"></param>
+        /// <param name="reference">The point in your timeline</param>
+        /// <param name="value">Amount weeks to add</param>
         /// <returns></returns>
         public static DateTime AddWeeks(this DateTime reference, Double value)
         {
@@ -339,8 +339,8 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Calculate the difference between two dates.
         /// </summary>
-        /// <param name="start">Data Inicial</param>
-        /// <param name="end">Data Final</param>
+        /// <param name="start">Start date</param>
+        /// <param name="end">End date</param>
         /// <returns></returns>
         public static TimeSpan DateDiff(this DateTime start, DateTime end)
         {
@@ -439,6 +439,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Return the next odd full hour. Example: Now it's 09/09/2018 15:36:12 so the next odd full hour will be 09/09/2018 17:00:00.
         /// </summary>
+        /// <param name="reference">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextFullOddHour(DateTime reference)
         {
@@ -452,6 +453,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Return the next even full hour. Example: Now it's 09/09/2018 15:36:12 so the next even full hour will be 09/09/2018 16:00:00.
         /// </summary>
+        /// <param name="reference">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextFullEvenHour(DateTime reference)
         {
@@ -465,6 +467,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Return the next full hour. Example: Now it's 09/09/2018 15:36:12 so the next half hour will be 09/09/2018 16:00:00.
         /// </summary>
+        /// <param name="reference">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextFullHour(DateTime reference)
         {
@@ -474,6 +477,7 @@ namespace Hto3.DateTimeHelpers
         /// <summary>
         /// Return the next half hour. Example: Now it's 09/09/2018 15:36:12 so the next half hour will be 09/09/2018 16:00:00.
         /// </summary>
+        /// <param name="reference">The point in your timeline</param>
         /// <returns></returns>
         public static DateTime NextHalfHour(DateTime reference)
         {
