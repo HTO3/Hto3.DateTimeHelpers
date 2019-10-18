@@ -9,13 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		.travis.yml = .travis.yml
 		LICENSE = LICENSE
 		nuget-logo.png = nuget-logo.png
 		nuget-logo.psd = nuget-logo.psd
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hto3.DateTimeHelpers.Test", "Hto3.DateTimeHelpers.Test\Hto3.DateTimeHelpers.Test.csproj", "{2AC20B10-F8BA-4A80-A520-ABF6DF24894A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hto3.DateTimeHelpers.Test", "Hto3.DateTimeHelpers.Test\Hto3.DateTimeHelpers.Test.csproj", "{2AC20B10-F8BA-4A80-A520-ABF6DF24894A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
