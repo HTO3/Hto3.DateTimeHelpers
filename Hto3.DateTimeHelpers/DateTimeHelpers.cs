@@ -9,7 +9,7 @@ namespace Hto3.DateTimeHelpers
     public static class DateTimeHelpers
     {
         private static readonly DateTime _epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-        private static readonly Int64 _epochTicks = new DateTime(1970, 1, 1, 0, 0, 0).Ticks;
+        private static readonly Int64 _epochTicks = 621355968000000000L;
         /// <summary>
         /// Convert unix timestamp to UTC DateTime.
         /// </summary>
