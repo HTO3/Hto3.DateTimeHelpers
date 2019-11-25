@@ -30,5 +30,19 @@ namespace Hto3.DateTimeHelpers.Test
             Assert.AreEqual(weeks.ElementAt(4).Item1, new DateTime(2018, 2, 25));
             Assert.AreEqual(weeks.ElementAt(4).Item2, new DateTime(2018, 2, 28));
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Invalid_Month()
+        {
+            DateTimeHelpers.GetMonthWeeks(13, 2018);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Invalid_Year()
+        {
+            DateTimeHelpers.GetMonthWeeks(13, -8);
+        }
     }
 }

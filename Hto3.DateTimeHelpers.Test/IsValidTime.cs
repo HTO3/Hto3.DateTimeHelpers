@@ -16,5 +16,23 @@ namespace Hto3.DateTimeHelpers.Test
             Assert.IsTrue(DateTimeHelpers.IsValidTime(23, 59, 1));
             Assert.IsFalse(DateTimeHelpers.IsValidTime(24, -1, 0));
         }
+
+        [TestMethod]
+        public void Invalid_Hour()
+        {
+            Assert.IsFalse(DateTimeHelpers.IsValidTime(25, 59, 1));
+        }
+
+        [TestMethod]
+        public void Invalid_Minute()
+        {
+            Assert.IsFalse(DateTimeHelpers.IsValidTime(22, 62, 1));
+        }
+
+        [TestMethod]
+        public void Invalid_Second()
+        {
+            Assert.IsFalse(DateTimeHelpers.IsValidTime(22, 33, -7));
+        }
     }
 }
