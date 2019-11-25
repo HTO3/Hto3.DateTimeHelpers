@@ -213,7 +213,7 @@ namespace Hto3.DateTimeHelpers
         public static DateTime SetYear(this DateTime me, Int32 year)
         {
             if (!DateTimeHelpers.IsValidDate(year, me.Month, me.Day))
-                throw new InvalidOperationException("Invalid month!");
+                throw new ArgumentOutOfRangeException(nameof(year), "Invalid year!");
 
             return new DateTime(year, me.Month, me.Day, me.Hour, me.Minute, me.Second, me.Millisecond);
         }
@@ -226,7 +226,7 @@ namespace Hto3.DateTimeHelpers
         public static DateTime SetMonth(this DateTime me, Int32 month)
         {
             if (!DateTimeHelpers.IsValidDate(me.Year, month, me.Day))
-                throw new InvalidOperationException("Invalid month!");
+                throw new ArgumentOutOfRangeException(nameof(month), "Invalid month!");
 
             return new DateTime(me.Year, month, me.Day, me.Hour, me.Minute, me.Second, me.Millisecond);
         }
@@ -239,7 +239,7 @@ namespace Hto3.DateTimeHelpers
         public static DateTime SetDay(this DateTime me, Int32 day)
         {
             if (!DateTimeHelpers.IsValidDate(me.Year, me.Month, day))
-                throw new InvalidOperationException("Invalid day!");
+                throw new ArgumentOutOfRangeException(nameof(day), "Invalid day!");
 
             return new DateTime(me.Year, me.Month, day, me.Hour, me.Minute, me.Second, me.Millisecond);
         }
@@ -252,7 +252,7 @@ namespace Hto3.DateTimeHelpers
         public static DateTime SetHour(this DateTime me, Int32 hour)
         {
             if (!DateTimeHelpers.IsValidTime(hour, me.Minute, me.Second))
-                throw new InvalidOperationException("Invalid hour!");
+                throw new ArgumentOutOfRangeException(nameof(hour), "Invalid hour!");
 
             return new DateTime(me.Year, me.Month, me.Day, hour, me.Minute, me.Second, me.Millisecond);
         }
@@ -265,7 +265,7 @@ namespace Hto3.DateTimeHelpers
         public static DateTime SetMinute(this DateTime me, Int32 minute)
         {
             if (!DateTimeHelpers.IsValidTime(me.Hour, minute, me.Second))
-                throw new InvalidOperationException("Invalid minute!");
+                throw new ArgumentOutOfRangeException(nameof(minute), "Invalid minute!");
 
             return new DateTime(me.Year, me.Month, me.Day, me.Hour, minute, me.Second, me.Millisecond);
         }
@@ -278,7 +278,7 @@ namespace Hto3.DateTimeHelpers
         public static DateTime SetSecond(this DateTime me, Int32 second)
         {
             if (!DateTimeHelpers.IsValidTime(me.Hour, me.Minute, second))
-                throw new InvalidOperationException("Invalid minute!");
+                throw new ArgumentOutOfRangeException(nameof(second), "Invalid second!");
 
             return new DateTime(me.Year, me.Month, me.Day, me.Hour, me.Minute, second, me.Millisecond);
         }
@@ -290,6 +290,9 @@ namespace Hto3.DateTimeHelpers
         /// <returns></returns>
         public static DateTime SetMillisecond(this DateTime me, Int32 millisecond)
         {
+            if (millisecond < 0)
+                throw new ArgumentOutOfRangeException(nameof(millisecond), "Invalid millisecond!");
+
             return new DateTime(me.Year, me.Month, me.Day, me.Hour, me.Minute, me.Second, millisecond);
         }
         /// <summary>

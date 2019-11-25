@@ -17,5 +17,13 @@ namespace Hto3.DateTimeHelpers.Test
             var date2 = new DateTime(2011, 10, 3, 12, 22, 7);
             Assert.AreEqual(DateTimeHelpers.SetYear(date, 2011), date2);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Invalid_Year()
+        {
+            var date = new DateTime(2010, 10, 3, 12, 22, 7);
+            DateTimeHelpers.SetYear(date, -8);
+        }
     }
 }
