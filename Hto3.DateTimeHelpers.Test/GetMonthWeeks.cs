@@ -42,7 +42,7 @@ namespace Hto3.DateTimeHelpers.Test
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Invalid_Year()
         {
-            DateTimeHelpers.GetMonthWeeks(13, -8);
+            DateTimeHelpers.GetMonthWeeks(12, -8);
         }
     }
 }
