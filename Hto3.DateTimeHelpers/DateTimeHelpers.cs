@@ -187,7 +187,7 @@ namespace Hto3.DateTimeHelpers
             return baseDate.AddSeconds(-1);
         }
         /// <summary>
-        /// Return a new datetime with the same date but on midnight.
+        /// Returns a new datetime with the same date but at midnight.
         /// </summary>
         /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>
@@ -196,7 +196,7 @@ namespace Hto3.DateTimeHelpers
             return new DateTime(baseDate.Year, baseDate.Month, baseDate.Day, 0, 0, 0);
         }
         /// <summary>
-        /// Return a new datetime with the same date but on noon.
+        /// Returns a new datetime with the same date but at noon.
         /// </summary>
         /// <param name="baseDate">The point in your timeline</param>
         /// <returns></returns>

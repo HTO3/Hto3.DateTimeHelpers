@@ -176,7 +176,7 @@ new DateTime(2018, 12, 11, 21, 50, 30).PreviousSecond() == new DateTime(2018, 12
 
 ### Midnight
 
-Return a new datetime with the same date but on midnight
+Returns a new datetime with the same date but at midnight.
 
 ```csharp
 new DateTime(2018, 12, 11, 21, 50, 30).Midnight() == new DateTime(2018, 12, 11, 0, 0, 0);
@@ -184,7 +184,7 @@ new DateTime(2018, 12, 11, 21, 50, 30).Midnight() == new DateTime(2018, 12, 11, 
 
 ### Noon
 
-Return a new datetime with the same date but on noon
+Returns a new datetime with the same date but at noon.
 
 ```csharp
 new DateTime(2018, 12, 11, 21, 50, 30).Noon() == new DateTime(2018, 12, 11, 12, 0, 0);
@@ -192,7 +192,7 @@ new DateTime(2018, 12, 11, 21, 50, 30).Noon() == new DateTime(2018, 12, 11, 12, 
 
 ### SetYear
 
-Change the year of a DateTime
+Change the year of a DateTime.
 
 ```csharp
 new DateTime(2018, 12, 11, 21, 50, 30).SetYear(1999) == new DateTime(1999, 12, 11, 21, 50, 30);
@@ -200,7 +200,7 @@ new DateTime(2018, 12, 11, 21, 50, 30).SetYear(1999) == new DateTime(1999, 12, 1
 
 ### SetMonth
 
-Change the month of a DateTime
+Change the month of a DateTime.
 
 ```csharp
 new DateTime(2018, 12, 11, 21, 50, 30).SetMonth(10) == new DateTime(2018, 10, 11, 21, 50, 30);
@@ -208,7 +208,7 @@ new DateTime(2018, 12, 11, 21, 50, 30).SetMonth(10) == new DateTime(2018, 10, 11
 
 ### SetDay
 
-Change the day of a DateTime
+Change the day of a DateTime.
 
 ```csharp
 new DateTime(2018, 12, 11, 21, 50, 30).SetDay(27) == new DateTime(2018, 12, 27, 21, 50, 30);
@@ -216,7 +216,7 @@ new DateTime(2018, 12, 11, 21, 50, 30).SetDay(27) == new DateTime(2018, 12, 27, 
 
 ### SetHour
 
-Change the hour of a DateTime
+Change the hour of a DateTime.
 
 ```csharp
 new DateTime(2018, 12, 11, 21, 50, 30).SetHour(1) == new DateTime(2018, 12, 11, 1, 50, 30);
@@ -224,7 +224,7 @@ new DateTime(2018, 12, 11, 21, 50, 30).SetHour(1) == new DateTime(2018, 12, 11, 
 
 ### SetMinute
 
-Change the minute of a DateTime
+Change the minute of a DateTime.
 
 ```csharp
 new DateTime(2018, 12, 11, 21, 50, 30).SetMinute(9) == new DateTime(2018, 12, 11, 9, 50, 30);
@@ -232,7 +232,7 @@ new DateTime(2018, 12, 11, 21, 50, 30).SetMinute(9) == new DateTime(2018, 12, 11
 
 ### SetSecond
 
-Change the second of a DateTime
+Change the second of a DateTime.
 
 ```csharp
 new DateTime(2018, 12, 11, 21, 50, 30).SetSecond(0) == new DateTime(2018, 12, 11, 21, 50, 0);
@@ -240,7 +240,7 @@ new DateTime(2018, 12, 11, 21, 50, 30).SetSecond(0) == new DateTime(2018, 12, 11
 
 ### SetMillisecond
 
-Change the milisecond of a DateTime
+Change the milisecond of a DateTime.
 
 ```csharp
 new DateTime(2018, 12, 11, 21, 50, 30, 3).SetMillisecond(9) == new DateTime(2018, 12, 11, 21, 50, 30, 9);
@@ -248,7 +248,7 @@ new DateTime(2018, 12, 11, 21, 50, 30, 3).SetMillisecond(9) == new DateTime(2018
 
 ### GetMonthWeeks
 
-Get a collection of weeks of a month
+Get a collection of weeks of a month.
 
 ```csharp
 var weeks = DateTimeHelpers.GetMonthWeeks(2, 2018);
@@ -271,7 +271,7 @@ weeks.ElementAt(4).Item2 == new DateTime(2018, 2, 28);//week end
 
 ### AddWeeks
 
-Add weeks
+Add weeks.
 
 ```csharp
 new DateTime(2018, 10, 1).AddWeeks(1) == new DateTime(2018, 10, 8);
@@ -298,7 +298,7 @@ new DateTime(2018, 2, 25).CalculateAge() == 1;
 
 ### IsBetween
 
-Verify if the date is between a range of dates
+Verify if the date is between a range of dates.
 
 ```csharp
 var start = new DateTime(2009, 1, 1);
@@ -308,7 +308,7 @@ new DateTime(2010, 1, 1).IsBetween(start, end) == true;
 
 ### FirstDayOfMonth
 
-Return the date of the first day in the specified month
+Return the date of the first day in the specified month.
 
 ```csharp
 new DateTime(2018, 2, 26).FirstDayOfMonth() == new DateTime(2018, 2, 1);
@@ -316,7 +316,7 @@ new DateTime(2018, 2, 26).FirstDayOfMonth() == new DateTime(2018, 2, 1);
 
 ### AmountDaysInMonth
 
-Return the amount of days in the month
+Return the amount of days in the month.
 
 ```csharp
 //Date used only to extract the year and month
