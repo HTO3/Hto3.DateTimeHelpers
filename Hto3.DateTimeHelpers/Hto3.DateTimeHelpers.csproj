@@ -5,21 +5,30 @@
     <Authors>HTO3</Authors>
     <Description>A set of extension methods that can be used to facilitate the manipulation of date and time solving common dev problems.</Description>
     <Copyright>MIT</Copyright>
-    <PackageLicenseUrl>https://github.com/HTO3/Hto3.DateTimeHelpers/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/HTO3/Hto3.DateTimeHelpers</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/HTO3/Hto3.DateTimeHelpers/master/nuget-logo.png</PackageIconUrl>
+    <PackageIconUrl></PackageIconUrl>
     <RepositoryUrl>https://github.com/HTO3/Hto3.DateTimeHelpers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Date Time DateTime manipulation helpers</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.5</Version>
-    <AssemblyVersion>1.0.5.0</AssemblyVersion>
-    <FileVersion>1.0.5.0</FileVersion>
+    <Version>1.0.6</Version>
+    <AssemblyVersion>1.0.6.0</AssemblyVersion>
+    <FileVersion>1.0.6.0</FileVersion>
+    <PackageIcon>nuget-logo.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
     <DocumentationFile>bin\Release\Hto3.DateTimeHelpers.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\nuget-logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
