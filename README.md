@@ -3,9 +3,11 @@
 Hto3.DateTimeHelpers
 ========================================
 
-|Nuget Package|Build|Test Coverage|
-|---|---|---|
-|[![Hto3.DateTimeHelpers](https://img.shields.io/nuget/v/Hto3.DateTimeHelpers.svg)](https://www.nuget.org/packages/Hto3.DateTimeHelpers/)|[![Build Status](https://travis-ci.org/HTO3/Hto3.DateTimeHelpers.svg?branch=master)](https://travis-ci.org/HTO3/Hto3.DateTimeHelpers)|[![codecov](https://codecov.io/gh/HTO3/Hto3.DateTimeHelpers/branch/master/graph/badge.svg)](https://codecov.io/gh/HTO3/Hto3.DateTimeHelpers)|
+[![License](https://img.shields.io/github/license/HTO3/Hto3.DateTimeHelpers)](https://github.com/HTO3/Hto3.DateTimeHelpers/blob/master/LICENSE)
+[![Hto3.DateTimeHelpers](https://img.shields.io/nuget/v/Hto3.DateTimeHelpers.svg)](https://www.nuget.org/packages/Hto3.DateTimeHelpers/)
+[![Downloads](https://img.shields.io/nuget/dt/Hto3.DateTimeHelpers)](https://www.nuget.org/stats/packages/Hto3.DateTimeHelpers?groupby=Version)
+[![Build Status](https://travis-ci.org/HTO3/Hto3.DateTimeHelpers.svg?branch=master)](https://travis-ci.org/HTO3/Hto3.DateTimeHelpers)
+[![codecov](https://codecov.io/gh/HTO3/Hto3.DateTimeHelpers/branch/master/graph/badge.svg)](https://codecov.io/gh/HTO3/Hto3.DateTimeHelpers)
 
 Features
 --------
