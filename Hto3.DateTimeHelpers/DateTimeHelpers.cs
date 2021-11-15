@@ -367,7 +367,7 @@ namespace Hto3.DateTimeHelpers
         /// <param name="reference">Date to verify</param>
         /// <param name="start">Start date</param>
         /// <param name="end">End date</param>
-        /// <returns>Verdadeiro, se a data estiver entre as duas outras informadas (inclusive nas duas pontas)</returns>
+        /// <returns>True if the date is between (including if exactly the same any edge)</returns>
         public static Boolean IsBetween(this DateTime reference, DateTime start, DateTime end)
         {
             return reference >= start && reference <= end;
