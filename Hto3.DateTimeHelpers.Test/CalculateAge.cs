@@ -13,13 +13,13 @@ namespace Hto3.DateTimeHelpers.Test
         [TestMethod]
         public void NormalUse()
         {
-            var today = new DateTime(2020, 10, 17, 20, 52, 0);
+            var today = DateTime.Now;
             var minusTenYearsOld = today.AddYears(10);
             var tenYearsOld = today.AddYears(-10);
 
-            Assert.AreEqual(DateTimeHelpers.CalculateAge(minusTenYearsOld), -9);
-            Assert.AreEqual(DateTimeHelpers.CalculateAge(tenYearsOld), 10);
-            Assert.AreEqual(DateTimeHelpers.CalculateAge(today), 0);
+            Assert.AreEqual(-9, DateTimeHelpers.CalculateAge(minusTenYearsOld));
+            Assert.AreEqual(10, DateTimeHelpers.CalculateAge(tenYearsOld));
+            Assert.AreEqual(0, DateTimeHelpers.CalculateAge(today));
         }
     }
 }
