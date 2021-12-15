@@ -14,6 +14,10 @@ namespace Hto3.DateTimeHelpers.Test
         public void NormalUse()
         {
             var today = DateTime.Now;
+
+            //leave the clock work (avoid .NET runtime optimizations)
+            System.Threading.Thread.Sleep(100);
+
             var minusTenYearsOld = today.AddYears(10);
             var tenYearsOld = today.AddYears(-10);
 
