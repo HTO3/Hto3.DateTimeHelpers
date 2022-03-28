@@ -8,6 +8,7 @@ Hto3.DateTimeHelpers
 [![Downloads](https://img.shields.io/nuget/dt/Hto3.DateTimeHelpers)](https://www.nuget.org/stats/packages/Hto3.DateTimeHelpers?groupby=Version)
 [![Build Status](https://github.com/HTO3/Hto3.DateTimeHelpers/actions/workflows/publish.yml/badge.svg)](https://github.com/HTO3/Hto3.DateTimeHelpers/actions/workflows/publish.yml)
 [![codecov](https://codecov.io/gh/HTO3/Hto3.DateTimeHelpers/branch/master/graph/badge.svg)](https://codecov.io/gh/HTO3/Hto3.DateTimeHelpers)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5bd72fa565784cf19d4151f167dbc059)](https://www.codacy.com/gh/HTO3/Hto3.DateTimeHelpers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HTO3/Hto3.DateTimeHelpers&amp;utm_campaign=Badge_Grade)
 
 Features
 --------
