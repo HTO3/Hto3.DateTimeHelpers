@@ -13,7 +13,7 @@ namespace Hto3.DateTimeHelpers.Test
         [TestMethod]
         public void NormalUse()
         {
-            var today = DateTime.Now;
+            var today = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
 
             //leave the clock work (avoid .NET runtime optimizations)
             System.Threading.Thread.Sleep(100);
@@ -21,7 +21,7 @@ namespace Hto3.DateTimeHelpers.Test
             var minusTenYearsOld = today.AddYears(10);
             var tenYearsOld = today.AddYears(-10);
 
-            Assert.AreEqual(-9, DateTimeHelpers.CalculateAge(minusTenYearsOld));
+            Assert.AreEqual(-10, DateTimeHelpers.CalculateAge(minusTenYearsOld));
             Assert.AreEqual(10, DateTimeHelpers.CalculateAge(tenYearsOld));
             Assert.AreEqual(0, DateTimeHelpers.CalculateAge(today));
         }
