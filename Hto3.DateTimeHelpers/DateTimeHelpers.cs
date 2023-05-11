@@ -50,6 +50,33 @@ namespace Hto3.DateTimeHelpers
             return dateWithTime.Date;
         }
         /// <summary>
+        /// Strip the minutes and seconds part of a DateTime.
+        /// </summary>
+        /// <param name="dateWithTime">A DateTime</param>
+        /// <returns></returns>
+        public static DateTime StripMinutes(this DateTime dateWithTime)
+        {
+            return new DateTime(dateWithTime.Year, dateWithTime.Month, dateWithTime.Day, dateWithTime.Hour, 0, 0, dateWithTime.Kind);
+        }
+        /// <summary>
+        /// Strip the seconds part of a DateTime.
+        /// </summary>
+        /// <param name="dateWithTime">A DateTime</param>
+        /// <returns></returns>
+        public static DateTime StripSeconds(this DateTime dateWithTime)
+        {
+            return new DateTime(dateWithTime.Year, dateWithTime.Month, dateWithTime.Day, dateWithTime.Hour, dateWithTime.Minute, 0, dateWithTime.Kind);
+        }
+        /// <summary>
+        /// Strip the miliseconds part of a DateTime.
+        /// </summary>
+        /// <param name="dateWithTime">A DateTime</param>
+        /// <returns></returns>
+        public static DateTime StripMiliseconds(this DateTime dateWithTime)
+        {
+            return new DateTime(dateWithTime.Year, dateWithTime.Month, dateWithTime.Day, dateWithTime.Hour, dateWithTime.Minute, dateWithTime.Second, dateWithTime.Kind);
+        }
+        /// <summary>
         /// Gets the dates between date range.
         /// </summary>
         /// <param name="startDate">The start date</param>
